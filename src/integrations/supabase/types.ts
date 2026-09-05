@@ -14,7 +14,226 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      class_sessions: {
+        Row: {
+          class_date: string
+          classes_used: number
+          created_at: string
+          module_id: string | null
+          notes: string
+          session_id: string
+          subject_id: string
+          topic_id: string | null
+        }
+        Insert: {
+          class_date?: string
+          classes_used?: number
+          created_at?: string
+          module_id?: string | null
+          notes?: string
+          session_id?: string
+          subject_id: string
+          topic_id?: string | null
+        }
+        Update: {
+          class_date?: string
+          classes_used?: number
+          created_at?: string
+          module_id?: string | null
+          notes?: string
+          session_id?: string
+          subject_id?: string
+          topic_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "class_sessions_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "modules"
+            referencedColumns: ["module_id"]
+          },
+          {
+            foreignKeyName: "class_sessions_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["subject_id"]
+          },
+          {
+            foreignKeyName: "class_sessions_topic_id_fkey"
+            columns: ["topic_id"]
+            isOneToOne: false
+            referencedRelation: "topics"
+            referencedColumns: ["topic_id"]
+          },
+        ]
+      }
+      modules: {
+        Row: {
+          created_at: string
+          estimated_classes: number
+          module_id: string
+          module_name: string
+          module_number: number
+          subject_id: string
+        }
+        Insert: {
+          created_at?: string
+          estimated_classes?: number
+          module_id?: string
+          module_name?: string
+          module_number?: number
+          subject_id: string
+        }
+        Update: {
+          created_at?: string
+          estimated_classes?: number
+          module_id?: string
+          module_name?: string
+          module_number?: number
+          subject_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "modules_subject_id_fkey"
+            columns: ["subject_id"]
+            isOneToOne: false
+            referencedRelation: "subjects"
+            referencedColumns: ["subject_id"]
+          },
+        ]
+      }
+      subjects: {
+        Row: {
+          academic_year: string
+          classes_per_week: number
+          created_at: string
+          department: string
+          end_date: string | null
+          semester: string
+          start_date: string | null
+          subject_code: string
+          subject_id: string
+          subject_name: string
+          teacher_id: string
+          total_classes: number
+          updated_at: string
+        }
+        Insert: {
+          academic_year?: string
+          classes_per_week?: number
+          created_at?: string
+          department?: string
+          end_date?: string | null
+          semester?: string
+          start_date?: string | null
+          subject_code?: string
+          subject_id?: string
+          subject_name: string
+          teacher_id: string
+          total_classes?: number
+          updated_at?: string
+        }
+        Update: {
+          academic_year?: string
+          classes_per_week?: number
+          created_at?: string
+          department?: string
+          end_date?: string | null
+          semester?: string
+          start_date?: string | null
+          subject_code?: string
+          subject_id?: string
+          subject_name?: string
+          teacher_id?: string
+          total_classes?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subjects_teacher_id_fkey"
+            columns: ["teacher_id"]
+            isOneToOne: false
+            referencedRelation: "teachers"
+            referencedColumns: ["teacher_id"]
+          },
+        ]
+      }
+      teachers: {
+        Row: {
+          created_at: string
+          department: string
+          email: string
+          name: string
+          photo_url: string | null
+          setup_complete: boolean
+          teacher_id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          department?: string
+          email?: string
+          name?: string
+          photo_url?: string | null
+          setup_complete?: boolean
+          teacher_id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          department?: string
+          email?: string
+          name?: string
+          photo_url?: string | null
+          setup_complete?: boolean
+          teacher_id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      topics: {
+        Row: {
+          completed: boolean
+          completed_date: string | null
+          created_at: string
+          estimated_classes: number
+          module_id: string
+          position: number
+          topic_id: string
+          topic_name: string
+        }
+        Insert: {
+          completed?: boolean
+          completed_date?: string | null
+          created_at?: string
+          estimated_classes?: number
+          module_id: string
+          position?: number
+          topic_id?: string
+          topic_name?: string
+        }
+        Update: {
+          completed?: boolean
+          completed_date?: string | null
+          created_at?: string
+          estimated_classes?: number
+          module_id?: string
+          position?: number
+          topic_id?: string
+          topic_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "topics_module_id_fkey"
+            columns: ["module_id"]
+            isOneToOne: false
+            referencedRelation: "modules"
+            referencedColumns: ["module_id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
