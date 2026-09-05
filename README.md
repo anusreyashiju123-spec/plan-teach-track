@@ -1,353 +1,162 @@
-# Plan & Progress
+# 🎓 ACADIFY – Smart Syllabus Management System for Teachers
 
-Build a complete modern web application called ACADIFY.
+### **Plan. Teach. Track. Complete.**
 
-Tagline:
-“Plan. Teach. Track. Complete.”
+**ACADIFY** is a Smart Syllabus Management System designed primarily for teachers. It helps teachers organize their syllabus, divide it into modules and topics, estimate the number of classes required, plan their teaching schedule, track completed topics, and understand whether they are **ahead, on schedule, or behind** their planned syllabus.
 
-Acadify is a Smart Syllabus Management System for Teachers. Its main purpose is to help teachers organize their syllabus, divide it into modules and topics, plan how many classes are needed, track teaching progress, and know whether they are ahead or behind schedule.
+---
 
-The website should be designed primarily for teachers.
+## 👥 Team no 25
 
-1. Teacher Login Page
+### Team Name
 
-Create a professional teacher login page.
+**[ctrl+v]**
 
-The page must have:
+### Team Members
 
-ACADIFY logo/name
+| No. | Name           | 
+| --- | -------------- | 
+| 1   | **[Anusreya]** | 
+| 2   | **[Heba ]**    | 
+| 3   | **[Saniya]**   |
 
-Tagline: “Plan. Teach. Track. Complete.”
+---
 
-Teacher Name input
+## 📌 Project Description
 
-Email input
+ACADIFY is a modern web application built to simplify **syllabus planning and teaching progress management for teachers**.
 
-Password input
+Teachers can enter their subject details, create modules and topics, estimate the classes required for each module, set a syllabus completion deadline, and define their weekly teaching capacity.
 
-Remember Me checkbox
+Based on this information, ACADIFY automatically calculates the teaching plan and compares the teacher's **expected progress with actual progress**.
 
-Forgot Password option
+The system also provides a Smart Planner that generates useful recommendations based on the teacher's real syllabus data, remaining topics, available time, and current progress.
 
-Login button
+---
 
-Example:
+# ❗ Problem Statement
 
-              ACADIFY
-       Plan. Teach. Track. Complete.
+Teachers often manage syllabus planning and teaching progress manually using notebooks, spreadsheets, or other disconnected methods.
 
-Teacher Name
-[ Enter your name ]
+This can make it difficult to:
 
-Email
-[ Enter your email ]
+* Organize large syllabi efficiently.
+* Divide subjects into modules and topics.
+* Estimate the number of classes required.
+* Maintain a realistic teaching schedule.
+* Track which topics have been completed.
+* Know whether the syllabus is progressing as planned.
+* Identify remaining topics and workload.
+* Adjust the teaching plan when progress changes.
 
-Password
-[ Enter your password ]
+Therefore, there is a need for a **simple, centralized, and intelligent syllabus management system specifically designed for teachers**.
 
-☐ Remember me       Forgot Password?
+ACADIFY addresses this problem by combining **syllabus organization, teaching planning, progress tracking, and smart recommendations** in one platform.
 
-          [ LOGIN ]
+---
 
+# 🎯 Objectives
 
-The teacher's name, email and password should be properly connected to the teacher account.
+The main objectives of ACADIFY are:
 
-After successful login:
+* 📚 To help teachers organize their complete syllabus.
+* 🗂️ To divide a syllabus into modules and topics.
+* ⏱️ To estimate the classes required for each topic/module.
+* 🗓️ To create a teaching plan based on available time.
+* 📊 To track syllabus completion in real time.
+* 📈 To compare expected and actual teaching progress.
+* 🚦 To identify whether a teacher is **Ahead, On Schedule, or Behind**.
+* 💡 To provide data-based teaching recommendations.
+* ✏️ To allow teachers to edit their syllabus at any time.
+* 📋 To generate detailed syllabus progress reports.
+* 🎓 To provide a simple and modern teacher-focused interface.
 
-If the teacher is logging in for the first time, show the Syllabus Setup page.
+---
 
-If the teacher has already completed setup, directly open the Main Dashboard.
+# 💡 Proposed Solution
 
-2. First Login — Syllabus Setup
+ACADIFY provides teachers with a complete workflow:
 
-After the teacher logs in for the first time, show a setup page.
-
-Title:
-
-Set Up Your Syllabus
-
-Subtitle:
-
-“Let's create your teaching plan.”
-
-Ask the teacher for the following details.
-
+```text
+Teacher Login
+      ↓
+Syllabus Setup
+      ↓
 Subject Details
+      ↓
+Add Modules
+      ↓
+Add Topics
+      ↓
+Estimate Classes
+      ↓
+Set Teaching Dates
+      ↓
+Automatic Syllabus Planning
+      ↓
+Teacher Dashboard
+      ↓
+Track Topics
+      ↓
+Record Classes
+      ↓
+Expected vs Actual Progress
+      ↓
+Smart Planner
+      ↓
+Reports
+      ↓
+Syllabus Completion
+```
 
-Subject Name
+---
 
-Subject Code
+# ✨ Key Features
 
-Department
+## 🔐 Teacher Login
 
-Semester
+* Teacher Name
+* Email
+* Password
+* Remember Me
+* Forgot Password
+* Teacher account management
+* First-login detection
 
-Academic Year
+---
 
-Example:
+## 📚 Syllabus Setup
 
-Subject Name: Database Management System
-Subject Code: CST301
-Department: Computer Science
-Semester: 3
-Academic Year: 2026–27
+Teachers can create their teaching plan by entering:
 
+* Subject Name
+* Subject Code
+* Department
+* Semester
+* Academic Year
+* Start Date
+* Expected Completion Date
+* Total Classes Available
+* Classes Per Week
 
-3. Module Setup
+---
 
-Allow the teacher to enter their complete syllabus module by module.
+## 🗂️ Module & Topic Management
 
-For every module, ask for:
+Teachers can:
 
-Module Number
-
-Module Name
-
-Topics
-
-Estimated number of classes required
-
-Example:
-
-Module 1
-Introduction to DBMS
-
-Topics:
-• Database Concepts
-• DBMS Architecture
-• Data Models
-• Database Languages
-
-Classes Required: 6
-
-
-Add buttons:
-
-+ Add Module
-
-+ Add Topic
-
-The teacher should be able to add multiple modules and multiple topics.
-
-For example:
-
-Module 1 → 6 classes
-Module 2 → 8 classes
-Module 3 → 10 classes
-Module 4 → 7 classes
-Module 5 → 9 classes
-
-
-4. Teaching Time Details
-
-Ask the teacher:
-
-When do you want to finish the syllabus?
-
-Include:
-
-Start Date
-
-Expected Completion Date
-
-Also ask:
-
-Total Classes Available
-
-Classes Per Week
+* Add modules
+* Edit modules
+* Delete modules
+* Add topics
+* Edit topics
+* Delete topics
+* Set estimated classes
+* Track topic completion
 
 Example:
 
-Start Date: 05 September 2026
-Expected Completion Date: 20 December 2026
-Total Classes Available: 40
-Classes Per Week: 3
-
-
-5. Automatic Syllabus Planning
-
-After the teacher enters the syllabus and time information, automatically calculate:
-
-Total Modules
-
-Total Topics
-
-Total Classes Required
-
-Available Weeks
-
-Classes Per Week
-
-Expected Weekly Progress
-
-Example:
-
-Total Modules: 5
-Total Topics: 24
-Total Classes Required: 40
-Available Weeks: 15
-Classes Per Week: 3
-
-
-Generate a simple planned schedule based on the entered information.
-
-For example:
-
-Week 1 → Module 1
-Week 2 → Module 1
-Week 3 → Module 2
-Week 4 → Module 2
-...
-
-
-The calculations should be based on the actual data entered by the teacher.
-
-6. Save Syllabus
-
-At the bottom of the setup page add:
-
-[ SAVE & GO TO DASHBOARD ]
-
-When clicked:
-
-Save teacher information.
-
-Save subject information.
-
-Save modules.
-
-Save topics.
-
-Save estimated class requirements.
-
-Save start and completion dates.
-
-Save classes per week.
-
-Calculate syllabus progress.
-
-Open the Main Dashboard.
-
-7. Main Teacher Dashboard
-
-Create the main dashboard after syllabus setup.
-
-Header:
-
-Welcome, [Teacher Name] 👋
-
-Show summary cards:
-
-Subjects
-1
-
-Modules
-5
-
-Total Topics
-24
-
-Completed Topics
-0
-
-Remaining Topics
-24
-
-
-Show a large:
-
-Overall Syllabus Progress
-
-0%
-
-0 / 24 Topics Completed
-
-
-Use a visual progress bar.
-
-Also display:
-
-Expected Progress: 10%
-Actual Progress: 0%
-
-Status: Behind Schedule
-
-
-The expected progress should be calculated using the current date, start date and expected completion date.
-
-8. Subject Section
-
-Create a Subjects section.
-
-Each subject should display:
-
-Subject Name
-
-Subject Code
-
-Semester
-
-Total Modules
-
-Total Topics
-
-Completed Topics
-
-Remaining Topics
-
-Progress Percentage
-
-Expected Progress
-
-Actual Progress
-
-Status
-
-Example:
-
-Database Management System
-CST301
-
-Progress: 42%
-
-Expected: 50%
-Actual: 42%
-
-Status: Behind Schedule
-
-
-9. Module Progress
-
-When the teacher opens a subject, show all modules.
-
-Example:
-
-Module 1
-Introduction to DBMS
-
-6 Topics
-4 Completed
-2 Remaining
-
-Progress: 67%
-
-
-Each module should have:
-
-[ VIEW TOPICS ]
-
-and
-
-[ EDIT ]
-
-buttons.
-
-10. Topic Tracking
-
-Inside each module, show all topics.
-
-Example:
-
+```text
 Module 1 – Introduction to DBMS
 
 ✓ Database Concepts
@@ -355,106 +164,129 @@ Module 1 – Introduction to DBMS
 ✓ Data Models
 □ Database Languages
 □ Database Users
+```
 
+---
 
-Each topic should have:
+## 📊 Automatic Syllabus Planning
 
-Topic name
+ACADIFY automatically calculates:
 
-Estimated classes
+* Total Modules
+* Total Topics
+* Total Classes Required
+* Available Weeks
+* Classes Per Week
+* Expected Weekly Progress
 
-Completed/Incomplete status
+It generates a planned schedule based on the actual syllabus and teaching information entered by the teacher.
 
-Completion date
+---
 
-Allow the teacher to:
+## 📈 Teacher Dashboard
 
-Mark topic as completed
-
-Mark topic as incomplete
-
-Edit topic
-
-Delete topic
-
-When a topic is marked completed, automatically update the module and overall syllabus progress.
-
-11. Record Class
-
-Create a Record Class page.
-
-The teacher can record what was taught.
-
-Fields:
-
-Subject
-
-Module
-
-Topic
-
-Class Date
-
-Number of Classes Used
-
-Notes
+The dashboard provides an overview of the teacher's syllabus.
 
 Example:
 
+```text
+Subjects              1
+Modules               5
+Total Topics          24
+Completed Topics      10
+Remaining Topics      14
+```
+
+### Overall Syllabus Progress
+
+```text
+Progress: 42%
+
+10 / 24 Topics Completed
+
+Expected Progress: 50%
+Actual Progress:   42%
+
+Status: Behind Schedule
+```
+
+---
+
+## 📝 Topic Tracking
+
+Each topic contains:
+
+* Topic name
+* Estimated classes
+* Completion status
+* Completion date
+
+Teachers can:
+
+* Mark topics as completed.
+* Mark topics as incomplete.
+* Edit topics.
+* Delete topics.
+
+Progress is automatically updated when topic completion changes.
+
+---
+
+## 🗓️ Record Class
+
+Teachers can record their teaching sessions.
+
+### Information Recorded
+
+* Subject
+* Module
+* Topic
+* Class Date
+* Number of Classes Used
+* Notes
+
+Example:
+
+```text
 Subject: DBMS
 Module: 2
 Topic: SQL Queries
 Class Date: 10 September 2026
 Classes Used: 1
 Notes: Completed SELECT and WHERE clauses
+```
 
+---
 
-After saving:
+# 📊 Expected vs Actual Progress
 
-Update the teaching record.
+ACADIFY compares the teacher's planned syllabus progress with actual progress.
 
-Update completed topics where applicable.
+### Status Types
 
-Update syllabus progress.
+### 🟢 Ahead
 
-12. Expected vs Actual Progress
+Actual progress is greater than expected progress.
 
-Acadify must compare:
+### 🔵 On Schedule
 
-Expected Progress
+Actual progress is close to the expected progress.
 
-with
+### 🔴 Behind
 
-Actual Progress
+Actual progress is significantly lower than expected progress.
 
-Use the syllabus dates and class plan to calculate expected progress.
+This allows teachers to quickly understand their current teaching position.
 
-Show three possible statuses:
+---
 
-Ahead
+# 🤖 Acadify Smart Planner
 
-When actual progress is greater than expected progress.
-
-On Schedule
-
-When actual progress is close to expected progress.
-
-Behind
-
-When actual progress is significantly lower than expected progress.
-
-Display the status clearly using a badge or indicator.
-
-13. Acadify Smart Planner
-
-Create a section called:
-
-Acadify Smart Planner
-
-This feature should give useful recommendations based on the teacher's actual syllabus data and progress.
+The **Acadify Smart Planner** provides recommendations based on the teacher's actual syllabus data.
 
 Examples:
 
+```text
 💡 You have 8 topics remaining.
 
 ⚠ You are currently behind your planned schedule.
@@ -462,178 +294,91 @@ Examples:
 📚 Module 3 has the most remaining topics.
 
 🎯 Try to complete 3 topics this week to get back on schedule.
+```
 
+Recommendations are based on:
 
-The recommendations should be generated from actual:
+* Remaining topics
+* Completed topics
+* Available teaching time
+* Expected completion date
+* Classes per week
+* Current syllabus progress
 
-Remaining topics
+The system does not generate random recommendations.
 
-Completed topics
+---
 
-Available time
+# ✏️ Edit Syllabus
 
-Expected completion date
+Teachers can edit their syllabus after initial setup.
 
-Classes per week
+Editable information includes:
 
-Current progress
+* Subject Name
+* Subject Code
+* Department
+* Semester
+* Academic Year
+* Modules
+* Module Names
+* Topics
+* Estimated Classes
+* Start Date
+* Expected Completion Date
+* Total Classes Available
+* Classes Per Week
 
-Do not generate random recommendations.
+After changes are saved, ACADIFY automatically recalculates the relevant syllabus information and progress.
 
-14. Edit Syllabus
+---
 
-This is a very important feature.
+# 📋 Reports
 
-Add an EDIT SYLLABUS option to the dashboard/sidebar.
+The Reports section provides:
 
-When the teacher clicks it, open the same setup form with all previously entered information already filled in.
+* Teacher information
+* Subject information
+* Module-wise progress
+* Topic-wise completion
+* Expected progress
+* Actual progress
+* Classes completed
+* Classes remaining
+* Overall syllabus completion
+* Current teaching status
 
-The teacher must be able to edit:
+Teachers can:
 
-Subject Name
-
-Subject Code
-
-Department
-
-Semester
-
-Academic Year
-
-Modules
-
-Module Names
-
-Topics
-
-Estimated Classes
-
-Start Date
-
-Expected Completion Date
-
-Total Classes Available
-
-Classes Per Week
-
-Buttons:
-
-[ SAVE CHANGES ]
-
-[ CANCEL ]
-
-After saving changes, automatically recalculate:
-
-Total modules
-
-Total topics
-
-Total classes
-
-Expected progress
-
-Actual progress
-
-Remaining topics
-
-Planned schedule
-
-Current status
-
-15. Edit Modules and Topics
-
-Every module must have an Edit button.
-
-Every topic must also have an Edit button.
-
-Example:
-
-Module 1
-Introduction to DBMS
-
-[ Edit Module ]
-
-✓ Database Concepts       [ Edit ]
-✓ DBMS Architecture      [ Edit ]
-□ Database Languages     [ Edit ]
-
-
-Allow:
-
-Add Module
-
-Edit Module
-
-Delete Module
-
-Add Topic
-
-Edit Topic
-
-Delete Topic
-
-Before deleting anything, show a confirmation message.
-
-16. Reports
-
-Create a Reports page.
-
-Show:
-
-Teacher name
-
-Subject information
-
-Module-wise progress
-
-Topic-wise completion
-
-Expected progress
-
-Actual progress
-
-Classes completed
-
-Classes remaining
-
-Overall syllabus completion
-
-Current status
-
-Add:
-
-[ GENERATE REPORT ]
+**Generate Report**
 
 and
 
-[ DOWNLOAD REPORT ]
+**Download Report**
 
-buttons.
+---
 
-17. Teacher Profile
+# 👤 Teacher Profile
 
-Create a Teacher Profile page.
+The profile section contains:
 
-Show:
+* Teacher Name
+* Email
+* Department
+* Profile Photo
 
-Teacher Name
+Teachers can:
 
-Email
+* Edit Profile
+* Change Password
 
-Department
+---
 
-Profile photo placeholder
+# 🧭 Navigation
 
-Allow:
+The application provides a responsive navigation sidebar:
 
-Edit Profile
-
-Change Password
-
-18. Navigation Sidebar
-
-Create a responsive sidebar with:
-
+```text
 🏠 Dashboard
 📚 Subjects
 📖 Modules
@@ -644,26 +389,65 @@ Create a responsive sidebar with:
 ✏️ Edit Syllabus
 👤 Profile
 🚪 Logout
+```
 
+The interface is designed to work across:
 
-The sidebar should work on desktop, tablet and mobile.
+* 💻 Desktop
+* 📱 Mobile
+* 📲 Tablet
 
-19. Database Structure
+---
 
-Design the application so it can later connect to our Python Flask + MySQL backend.
+# 🛠️ Technologies Used
 
-Use these main tables.
+## Frontend
 
-teachers
+* **React**
+* **TypeScript**
+* **Vite**
+* **Tailwind CSS**
+* **JavaScript**
+* **HTML5**
+* **CSS3**
 
+## Backend
+
+* **Python**
+* **Flask**
+
+## Database
+
+* **MySQL**
+
+## Tools & Platforms
+
+* **Visual Studio Code**
+* **Git**
+* **GitHub**
+* **npm**
+* **Lovable**
+
+---
+
+# 🗄️ Database Design
+
+The application is designed to work with a Python Flask + MySQL backend.
+
+### Main Tables
+
+#### `teachers`
+
+```text
 teacher_id
 name
 email
 password
+```
 
+#### `subjects`
 
-subjects
-
+```text
 subject_id
 teacher_id
 subject_name
@@ -675,162 +459,169 @@ total_classes
 classes_per_week
 start_date
 end_date
+```
 
+#### `modules`
 
-modules
-
+```text
 module_id
 subject_id
 module_number
 module_name
 estimated_classes
+```
 
+#### `topics`
 
-topics
-
+```text
 topic_id
 module_id
 topic_name
 estimated_classes
 completed
 completed_date
+```
 
+#### `class_sessions`
 
-class_sessions
-
+```text
 session_id
 subject_id
 topic_id
 class_date
 classes_used
 notes
+```
 
+#### `syllabus_progress`
 
-syllabus_progress
-
+```text
 progress_id
 subject_id
 expected_percentage
 actual_percentage
 status
 last_updated
+```
+
+---
+
+# 🔗 Project Links
+
+## 🌐 Live Project
+
+**[https://plan-teach-track.lovable.app]**
 
 
-Use proper relationships between the tables.
+## 💻 GitHub Repository
 
-20. UI/UX Design
-
-Make Acadify look like a real modern teacher productivity application.
-
-Use:
-
-Clean professional academic design
-
-Modern dashboard
-
-Responsive layout
-
-Attractive cards
-
-Progress bars
-
-Simple charts
-
-Clear buttons
-
-Good spacing
-
-Easy-to-read typography
-
-Consistent icons
-
-Professional forms
-
-Responsive mobile design
-
-Empty-state messages
-
-Confirmation dialogs
-
-Keep the interface simple and easy for teachers to use.
-
-21. Most Important User Journey
-
-The website must feel like this:
-
-                    ACADIFY
-                       ↓
-                TEACHER LOGIN
-                       ↓
-              Enter Name + Email
-                  + Password
-                       ↓
-                  LOGIN
-                       ↓
-             FIRST LOGIN?
-              ↙          ↘
-            YES           NO
-             ↓             ↓
-      SYLLABUS SETUP    DASHBOARD
-             ↓
-       Subject Details
-             ↓
-        Add Modules
-             ↓
-         Add Topics
-             ↓
-      Add Class Details
-             ↓
-     Add Time & Deadline
-             ↓
-      Automatic Planning
-             ↓
-          SAVE
-             ↓
-       MAIN DASHBOARD
-             ↓
-      Track Syllabus
-             ↓
-       Record Classes
-             ↓
-      Mark Topics Done
-             ↓
-    Expected vs Actual
-             ↓
-      Smart Suggestions
-             ↓
-       Edit Anytime
+**[https://github.com/anusreyashiju123-spec/plan-teach-track]**
 
 
-Final Requirement
 
-Do not make attendance, student monitoring, or parent monitoring the main purpose of Acadify.
 
-The central purpose is:
 
-Teacher → Syllabus → Modules → Topics → Classes → Progress → Smart Planning → Completion
+The demonstration video showcases:
 
-Make sure that everything entered during the first setup can be viewed and edited later from the dashboard.
+* Teacher login
+* Syllabus setup
+* Module creation
+* Topic management
+* Automatic planning
+* Dashboard
+* Topic tracking
+* Class recording
+* Expected vs actual progress
+* Smart Planner
+* Syllabus editing
+* Reports
 
-This project was built with [Lovable](https://lovable.dev).
+---
 
-**Live app**: https://plan-teach-track.lovable.app
+# 🚀 Installation & Setup
 
-## Build with Lovable
+### 1. Clone the repository
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/019d893f-7d85-4f8c-9896-d7694c6e4ea3).
+```bash
+git clone https://github.com/anusreyashiju123-spec/plan-teach-track.git
+```
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### 2. Navigate to the project
 
-## Development
+```bash
+cd plan-teach-track
+```
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### 3. Install dependencies
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
 npm run dev
 ```
+
+The application will be available at:
+
+```text
+http://localhost:5173/
+```
+
+---
+
+# 🔮 Future Enhancements
+
+Future versions of ACADIFY can include:
+
+* 🤖 AI-powered teaching recommendations
+* 📱 Dedicated mobile application
+* 🔔 Automated deadline reminders
+* 📊 Advanced progress analytics
+* 📅 Automatic timetable integration
+* ☁️ Cloud-based deployment
+* 📈 Teaching performance analytics
+* 🔗 Integration with institutional academic systems
+* 📄 Advanced report generation
+* 🔐 Enhanced authentication and security
+
+---
+
+# 🎯 Expected Impact
+
+ACADIFY aims to help teachers:
+
+* Save time on syllabus planning.
+* Maintain organized teaching records.
+* Monitor syllabus completion easily.
+* Identify schedule delays early.
+* Make better teaching plans.
+* Complete the syllabus within the planned academic period.
+
+The system transforms syllabus management from a **manual tracking process into a structured and data-driven workflow**.
+
+---
+
+# 🏁 Conclusion
+
+ACADIFY provides a centralized solution for teachers to **Plan, Teach, Track, and Complete** their syllabus efficiently.
+
+By combining syllabus organization, module and topic management, teaching records, automatic progress calculation, expected-vs-actual analysis, and smart planning recommendations, ACADIFY helps teachers maintain better control over their academic schedule.
+
+### **ACADIFY — Plan. Teach. Track. Complete.** 🎓
+
+---
+
+## 🙏 Acknowledgement
+
+We sincerely thank our teachers, mentors, institution, and everyone who supported us during the development of this project.
+
+---
+
+## ⭐ Support the Project
+
+If you find **ACADIFY** useful, consider giving the repository a ⭐ on GitHub.
+
+**Made with ❤️ by Team[25]**
