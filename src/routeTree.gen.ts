@@ -12,9 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
+import { Route as AuthenticatedEditSyllabusRouteImport } from './routes/_authenticated/edit-syllabus'
 import { Route as AuthenticatedModulesRouteImport } from './routes/_authenticated/modules'
+import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
 import { Route as AuthenticatedProgressRouteImport } from './routes/_authenticated/progress'
 import { Route as AuthenticatedRecordClassRouteImport } from './routes/_authenticated/record-class'
+import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
 import { Route as AuthenticatedSetupRouteImport } from './routes/_authenticated/setup'
 import { Route as AuthenticatedSubjectsRouteImport } from './routes/_authenticated/subjects'
 import { Route as AuthenticatedTopicsRouteImport } from './routes/_authenticated/topics'
@@ -33,9 +36,20 @@ const AuthenticatedDashboardRoute = AuthenticatedDashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedEditSyllabusRoute =
+  AuthenticatedEditSyllabusRouteImport.update({
+    id: '/edit-syllabus',
+    path: '/edit-syllabus',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedModulesRoute = AuthenticatedModulesRouteImport.update({
   id: '/modules',
   path: '/modules',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedProgressRoute = AuthenticatedProgressRouteImport.update({
@@ -49,6 +63,11 @@ const AuthenticatedRecordClassRoute =
     path: '/record-class',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const AuthenticatedReportsRoute = AuthenticatedReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const AuthenticatedSetupRoute = AuthenticatedSetupRouteImport.update({
   id: '/setup',
   path: '/setup',
@@ -68,9 +87,12 @@ const AuthenticatedTopicsRoute = AuthenticatedTopicsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
+  '/edit-syllabus': typeof AuthenticatedEditSyllabusRoute
   '/modules': typeof AuthenticatedModulesRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/progress': typeof AuthenticatedProgressRoute
   '/record-class': typeof AuthenticatedRecordClassRoute
+  '/reports': typeof AuthenticatedReportsRoute
   '/setup': typeof AuthenticatedSetupRoute
   '/subjects': typeof AuthenticatedSubjectsRoute
   '/topics': typeof AuthenticatedTopicsRoute
@@ -78,9 +100,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
+  '/edit-syllabus': typeof AuthenticatedEditSyllabusRoute
   '/modules': typeof AuthenticatedModulesRoute
+  '/profile': typeof AuthenticatedProfileRoute
   '/progress': typeof AuthenticatedProgressRoute
   '/record-class': typeof AuthenticatedRecordClassRoute
+  '/reports': typeof AuthenticatedReportsRoute
   '/setup': typeof AuthenticatedSetupRoute
   '/subjects': typeof AuthenticatedSubjectsRoute
   '/topics': typeof AuthenticatedTopicsRoute
@@ -90,9 +115,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
+  '/_authenticated/edit-syllabus': typeof AuthenticatedEditSyllabusRoute
   '/_authenticated/modules': typeof AuthenticatedModulesRoute
+  '/_authenticated/profile': typeof AuthenticatedProfileRoute
   '/_authenticated/progress': typeof AuthenticatedProgressRoute
   '/_authenticated/record-class': typeof AuthenticatedRecordClassRoute
+  '/_authenticated/reports': typeof AuthenticatedReportsRoute
   '/_authenticated/setup': typeof AuthenticatedSetupRoute
   '/_authenticated/subjects': typeof AuthenticatedSubjectsRoute
   '/_authenticated/topics': typeof AuthenticatedTopicsRoute
@@ -102,9 +130,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/dashboard'
+    | '/edit-syllabus'
     | '/modules'
+    | '/profile'
     | '/progress'
     | '/record-class'
+    | '/reports'
     | '/setup'
     | '/subjects'
     | '/topics'
@@ -112,9 +143,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/dashboard'
+    | '/edit-syllabus'
     | '/modules'
+    | '/profile'
     | '/progress'
     | '/record-class'
+    | '/reports'
     | '/setup'
     | '/subjects'
     | '/topics'
@@ -123,9 +157,12 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/_authenticated/dashboard'
+    | '/_authenticated/edit-syllabus'
     | '/_authenticated/modules'
+    | '/_authenticated/profile'
     | '/_authenticated/progress'
     | '/_authenticated/record-class'
+    | '/_authenticated/reports'
     | '/_authenticated/setup'
     | '/_authenticated/subjects'
     | '/_authenticated/topics'
@@ -159,11 +196,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDashboardRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/edit-syllabus': {
+      id: '/_authenticated/edit-syllabus'
+      path: '/edit-syllabus'
+      fullPath: '/edit-syllabus'
+      preLoaderRoute: typeof AuthenticatedEditSyllabusRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/modules': {
       id: '/_authenticated/modules'
       path: '/modules'
       fullPath: '/modules'
       preLoaderRoute: typeof AuthenticatedModulesRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/profile': {
+      id: '/_authenticated/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticatedProfileRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/progress': {
@@ -178,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/record-class'
       fullPath: '/record-class'
       preLoaderRoute: typeof AuthenticatedRecordClassRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/reports': {
+      id: '/_authenticated/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof AuthenticatedReportsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/setup': {
@@ -206,9 +264,12 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
+  AuthenticatedEditSyllabusRoute: typeof AuthenticatedEditSyllabusRoute
   AuthenticatedModulesRoute: typeof AuthenticatedModulesRoute
+  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
   AuthenticatedProgressRoute: typeof AuthenticatedProgressRoute
   AuthenticatedRecordClassRoute: typeof AuthenticatedRecordClassRoute
+  AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
   AuthenticatedSetupRoute: typeof AuthenticatedSetupRoute
   AuthenticatedSubjectsRoute: typeof AuthenticatedSubjectsRoute
   AuthenticatedTopicsRoute: typeof AuthenticatedTopicsRoute
@@ -216,9 +277,12 @@ interface AuthenticatedRouteRouteChildren {
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
+  AuthenticatedEditSyllabusRoute: AuthenticatedEditSyllabusRoute,
   AuthenticatedModulesRoute: AuthenticatedModulesRoute,
+  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
   AuthenticatedProgressRoute: AuthenticatedProgressRoute,
   AuthenticatedRecordClassRoute: AuthenticatedRecordClassRoute,
+  AuthenticatedReportsRoute: AuthenticatedReportsRoute,
   AuthenticatedSetupRoute: AuthenticatedSetupRoute,
   AuthenticatedSubjectsRoute: AuthenticatedSubjectsRoute,
   AuthenticatedTopicsRoute: AuthenticatedTopicsRoute,
