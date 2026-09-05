@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthenticatedDashboardRouteImport } from './routes/_authenticated/dashboard'
 import { Route as AuthenticatedModulesRouteImport } from './routes/_authenticated/modules'
+import { Route as AuthenticatedProgressRouteImport } from './routes/_authenticated/progress'
+import { Route as AuthenticatedRecordClassRouteImport } from './routes/_authenticated/record-class'
 import { Route as AuthenticatedSetupRouteImport } from './routes/_authenticated/setup'
 import { Route as AuthenticatedSubjectsRouteImport } from './routes/_authenticated/subjects'
 import { Route as AuthenticatedTopicsRouteImport } from './routes/_authenticated/topics'
@@ -36,6 +38,17 @@ const AuthenticatedModulesRoute = AuthenticatedModulesRouteImport.update({
   path: '/modules',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const AuthenticatedProgressRoute = AuthenticatedProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedRecordClassRoute =
+  AuthenticatedRecordClassRouteImport.update({
+    id: '/record-class',
+    path: '/record-class',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedSetupRoute = AuthenticatedSetupRouteImport.update({
   id: '/setup',
   path: '/setup',
@@ -56,6 +69,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/modules': typeof AuthenticatedModulesRoute
+  '/progress': typeof AuthenticatedProgressRoute
+  '/record-class': typeof AuthenticatedRecordClassRoute
   '/setup': typeof AuthenticatedSetupRoute
   '/subjects': typeof AuthenticatedSubjectsRoute
   '/topics': typeof AuthenticatedTopicsRoute
@@ -64,6 +79,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof AuthenticatedDashboardRoute
   '/modules': typeof AuthenticatedModulesRoute
+  '/progress': typeof AuthenticatedProgressRoute
+  '/record-class': typeof AuthenticatedRecordClassRoute
   '/setup': typeof AuthenticatedSetupRoute
   '/subjects': typeof AuthenticatedSubjectsRoute
   '/topics': typeof AuthenticatedTopicsRoute
@@ -74,6 +91,8 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/_authenticated/dashboard': typeof AuthenticatedDashboardRoute
   '/_authenticated/modules': typeof AuthenticatedModulesRoute
+  '/_authenticated/progress': typeof AuthenticatedProgressRoute
+  '/_authenticated/record-class': typeof AuthenticatedRecordClassRoute
   '/_authenticated/setup': typeof AuthenticatedSetupRoute
   '/_authenticated/subjects': typeof AuthenticatedSubjectsRoute
   '/_authenticated/topics': typeof AuthenticatedTopicsRoute
@@ -81,15 +100,32 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/dashboard' | '/modules' | '/setup' | '/subjects' | '/topics'
+    | '/'
+    | '/dashboard'
+    | '/modules'
+    | '/progress'
+    | '/record-class'
+    | '/setup'
+    | '/subjects'
+    | '/topics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/modules' | '/setup' | '/subjects' | '/topics'
+  to:
+    | '/'
+    | '/dashboard'
+    | '/modules'
+    | '/progress'
+    | '/record-class'
+    | '/setup'
+    | '/subjects'
+    | '/topics'
   id:
     | '__root__'
     | '/'
     | '/_authenticated'
     | '/_authenticated/dashboard'
     | '/_authenticated/modules'
+    | '/_authenticated/progress'
+    | '/_authenticated/record-class'
     | '/_authenticated/setup'
     | '/_authenticated/subjects'
     | '/_authenticated/topics'
@@ -130,6 +166,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedModulesRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/_authenticated/progress': {
+      id: '/_authenticated/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof AuthenticatedProgressRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/record-class': {
+      id: '/_authenticated/record-class'
+      path: '/record-class'
+      fullPath: '/record-class'
+      preLoaderRoute: typeof AuthenticatedRecordClassRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/setup': {
       id: '/_authenticated/setup'
       path: '/setup'
@@ -157,6 +207,8 @@ declare module '@tanstack/react-router' {
 interface AuthenticatedRouteRouteChildren {
   AuthenticatedDashboardRoute: typeof AuthenticatedDashboardRoute
   AuthenticatedModulesRoute: typeof AuthenticatedModulesRoute
+  AuthenticatedProgressRoute: typeof AuthenticatedProgressRoute
+  AuthenticatedRecordClassRoute: typeof AuthenticatedRecordClassRoute
   AuthenticatedSetupRoute: typeof AuthenticatedSetupRoute
   AuthenticatedSubjectsRoute: typeof AuthenticatedSubjectsRoute
   AuthenticatedTopicsRoute: typeof AuthenticatedTopicsRoute
@@ -165,6 +217,8 @@ interface AuthenticatedRouteRouteChildren {
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedDashboardRoute: AuthenticatedDashboardRoute,
   AuthenticatedModulesRoute: AuthenticatedModulesRoute,
+  AuthenticatedProgressRoute: AuthenticatedProgressRoute,
+  AuthenticatedRecordClassRoute: AuthenticatedRecordClassRoute,
   AuthenticatedSetupRoute: AuthenticatedSetupRoute,
   AuthenticatedSubjectsRoute: AuthenticatedSubjectsRoute,
   AuthenticatedTopicsRoute: AuthenticatedTopicsRoute,
