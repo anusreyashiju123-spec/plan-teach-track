@@ -22,15 +22,21 @@ export function ModuleList({
   stats,
   editable = true,
   defaultExpandedFirst = true,
+  expandAll = false,
 }: {
   stats: SubjectStats;
   editable?: boolean;
   defaultExpandedFirst?: boolean;
+  expandAll?: boolean;
 }) {
   const refresh = useAcadifyRefresh();
   const first = stats.modules[0]?.module.module_id;
   const [expanded, setExpanded] = useState<string[]>(
-    defaultExpandedFirst && first ? [first] : [],
+    expandAll
+      ? stats.modules.map((m) => m.module.module_id)
+      : defaultExpandedFirst && first
+        ? [first]
+        : [],
   );
   const [editingModule, setEditingModule] = useState<string | null>(null);
   const [editingTopic, setEditingTopic] = useState<string | null>(null);
