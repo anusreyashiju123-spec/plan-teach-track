@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.handle_new_teacher() FROM anon, authenticated, PUBLIC;
